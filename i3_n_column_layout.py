@@ -5,17 +5,24 @@
 ################################################################
 #
 # /// script
+# requires-python = ">=3.10"
 # dependencies = [
 #   "i3ipc",
+#   "typing-extensions>=4.1; python_version < '3.11'",
 # ]
 # ///
 
 import argparse
+import sys
 from dataclasses import dataclass
 from typing import Literal, cast
 
 import i3ipc  # pyright: ignore[reportMissingTypeStubs]
-from typing_extensions import Self
+
+if sys.version_info >= (3, 11):
+    from typing import Self  # pyright: ignore[reportUnreachable]
+else:
+    from typing_extensions import Self
 
 
 def container_to_ignore(container: i3ipc.Con) -> bool:
