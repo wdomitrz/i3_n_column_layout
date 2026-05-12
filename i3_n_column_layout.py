@@ -12,9 +12,10 @@
 
 import argparse
 from dataclasses import dataclass
-from typing import Literal, Self, cast
+from typing import Literal, cast
 
 import i3ipc  # pyright: ignore[reportMissingTypeStubs]
+from typing_extensions import Self
 
 
 def container_to_ignore(container: i3ipc.Con) -> bool:
