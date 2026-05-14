@@ -8,6 +8,7 @@
 # requires-python = ">=3.10"
 # dependencies = [
 #   "i3ipc",
+#   "typing_extensions",
 # ]
 # ///
 
